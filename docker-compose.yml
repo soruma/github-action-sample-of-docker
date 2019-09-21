@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: bundle exec pumactl start
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
+
+volumes:
+  bundle:
